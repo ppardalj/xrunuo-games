@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FE7D1BD8-74F4-4427-A21F-53125AB4F80F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Games</RootNamespace>
+    <AssemblyName>Games</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Scripts\GameAutoTrigger.cs" />
+    <Compile Include="Scripts\GameEquipStone.cs" />
+    <Compile Include="Scripts\GateRestrict.cs" />
+    <Compile Include="Scripts\GoEvent.cs" />
+    <Compile Include="Scripts\SalaEsperaRegion.cs" />
+    <Compile Include="Scripts\TournamentTicket.cs" />
+    <Compile Include="Scripts\TournamentTicketFragment.cs" />
+    <Compile Include="Scripts\UndressingTeleporter.cs" />
+    <Compile Include="Scripts\CTF\CTFFlag.cs" />
+    <Compile Include="Scripts\CTF\CTFGame.cs" />
+    <Compile Include="Scripts\CTF\CTFGameDefinition.cs" />
+    <Compile Include="Scripts\CTF\CTFTeam.cs" />
+    <Compile Include="Scripts\CTF\CTFTeamDefinition.cs" />
+    <Compile Include="Scripts\CTF\Gumps\CTFGameDefinitionGump.cs" />
+    <Compile Include="Scripts\CW\CWGame.cs" />
+    <Compile Include="Scripts\CW\CWGameDefinition.cs" />
+    <Compile Include="Scripts\CW\CWHealer.cs" />
+    <Compile Include="Scripts\CW\CWTeam.cs" />
+    <Compile Include="Scripts\CW\CWTeamDefinition.cs" />
+    <Compile Include="Scripts\CW\Gumps\CWGameDefinitionGump.cs" />
+    <Compile Include="Scripts\Common\BaseGame.cs" />
+    <Compile Include="Scripts\Common\BaseIndividualGame.cs" />
+    <Compile Include="Scripts\Common\BaseTeamGame.cs" />
+    <Compile Include="Scripts\Common\Embryo.cs" />
+    <Compile Include="Scripts\Common\GameDefinition.cs" />
+    <Compile Include="Scripts\Common\GameExtensions.cs" />
+    <Compile Include="Scripts\Common\GameHorse.cs" />
+    <Compile Include="Scripts\Common\GameListeners.cs" />
+    <Compile Include="Scripts\Common\GameRegion.cs" />
+    <Compile Include="Scripts\Common\GameVictoryInfo.cs" />
+    <Compile Include="Scripts\Common\JoinStone.cs" />
+    <Compile Include="Scripts\Common\LeaveMode.cs" />
+    <Compile Include="Scripts\Common\Manager.cs" />
+    <Compile Include="Scripts\Common\ManagerPersistance.cs" />
+    <Compile Include="Scripts\Common\Registry.cs" />
+    <Compile Include="Scripts\Common\Team.cs" />
+    <Compile Include="Scripts\Common\TeamChat.cs" />
+    <Compile Include="Scripts\Common\TeamDefinition.cs" />
+    <Compile Include="Scripts\Common\Interfaces\IGame.cs" />
+    <Compile Include="Scripts\Common\Interfaces\ITeamGame.cs" />
+    <Compile Include="Scripts\Gumps\GameDefinitionGump.cs" />
+    <Compile Include="Scripts\Gumps\GameManagerGump.cs" />
+    <Compile Include="Scripts\Gumps\JoinGump.cs" />
+    <Compile Include="Scripts\Gumps\SelectGameTypeGump.cs" />
+    <Compile Include="Scripts\Helpers\BankHelper.cs" />
+    <Compile Include="Scripts\Helpers\GameHelper.cs" />
+    <Compile Include="Scripts\Survival\SurvivalGame.cs" />
+    <Compile Include="Scripts\Survival\SurvivalGameDefinition.cs" />
+    <Compile Include="Scripts\Survival\Gumps\SurvivalGameDefinitionGump.cs" />
+    <Compile Include="Scripts\Survival\Items\SurvivalInvisPotion.cs" />
+    <Compile Include="Scripts\Survival\Mobiles\SurvivalVortex.cs" />
+    <Compile Include="Scripts\Total War\TotalWarGame.cs" />
+    <Compile Include="Scripts\Total War\TotalWarGameDefinition.cs" />
+    <Compile Include="Scripts\Total War\TotalWarTeam.cs" />
+    <Compile Include="Scripts\Total War\TotalWarTeamDefinition.cs" />
+    <Compile Include="Scripts\Total War\Gumps\TotalWarGameDefinitionGump.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
