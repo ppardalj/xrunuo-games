@@ -61,7 +61,7 @@ namespace Server.Mobiles
 			return true;
 		}
 
-		protected override bool OnBeforeDeath()
+		public override bool OnBeforeDeath()
 		{
 			m_Team.OnHealerDeath();
 			
