@@ -275,7 +275,7 @@ namespace Server.Engines.Games
 
 		public virtual void OnWin( Mobile m )
 		{
-			if ( m.Client != null )
+			if ( m.NetState != null )
 				GiveReward( m );
 
 			foreach ( var listener in m_EventListeners )
@@ -284,7 +284,7 @@ namespace Server.Engines.Games
 
 		public virtual void OnLose( Mobile m )
 		{
-			if ( m.Client != null )
+			if ( m.NetState != null )
 			{
 				foreach ( var listener in m_EventListeners )
 					listener.OnLose( m );

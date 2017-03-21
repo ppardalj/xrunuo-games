@@ -158,7 +158,7 @@ namespace Server.Engines.Games
 
 				if ( elapsedSinceLogout > LogoutLimitTime )
 				{
-					if ( m.Client == null )
+					if ( m.NetState == null )
 						Game.LeaveGame( m );
 				}
 			}
@@ -376,7 +376,7 @@ namespace Server.Engines.Games
 
 		public override void OnLose( Mobile from )
 		{
-			if ( from.Client != null )
+			if ( from.NetState != null )
 			{
 				DetectSkillContext context = GetContext( from );
 
@@ -391,7 +391,7 @@ namespace Server.Engines.Games
 
 		public override void OnWin( Mobile from )
 		{
-			if ( from.Client != null )
+			if ( from.NetState != null )
 			{
 				DetectSkillContext context = GetContext( from );
 

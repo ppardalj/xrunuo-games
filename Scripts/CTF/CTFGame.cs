@@ -67,7 +67,7 @@ namespace Server.Engines.Games
 
 		public override void OnLose( Mobile m )
 		{
-			if ( m.Client != null )
+			if ( m.NetState != null )
 			{
 				var MyTeam = GetTeamFor( m ) as CTFTeam;
 				int TeamPoints = MyTeam.Score / 3;

@@ -21,18 +21,18 @@ namespace Server.Gumps
 			AddBackground( 10, 10, 530, 200, 3000 );
 
 			AddPage( 1 );
-			AddLabel( 20, 20, 0, String.Format( "¡Bienvenido a la {0}!", m_Stone.GameName ) );
+			AddLabel( 20, 20, 0, String.Format( "ï¿½Bienvenido a la {0}!", m_Stone.GameName ) );
 			AddLabel( 20, 60, 0, "Todos los objetos que lleves encima seran automaticamente enviados" );
 			AddLabel( 20, 80, 0, "a tu banco. Guarda tu montura en el establo antes de entrar. Todos los " );
-			AddLabel( 20, 100, 0, "items que necesites se te daran dentro del Juego. ¡Diviertete!" );
+			AddLabel( 20, 100, 0, "items que necesites se te daran dentro del Juego. ï¿½Diviertete!" );
 
 			AddLabel( 55, 180, 0, "Cancelar" );
 			AddButton( 20, 180, 4005, 4006, 0, GumpButtonType.Reply, 0 );
-			AddLabel( 165, 180, 0, "¡Si, entrar!" );
+			AddLabel( 165, 180, 0, "ï¿½Si, entrar!" );
 			AddButton( 130, 180, 4005, 4006, 1, GumpButtonType.Reply, 0 );
 		}
 
-		public override void OnResponse( GameClient state, RelayInfo info )
+		public override void OnResponse( NetState state, RelayInfo info )
 		{
 			Mobile from = state.Mobile;
 
@@ -64,13 +64,13 @@ namespace Server.Gumps
 				{
 					from.SendMessage( 32, "No se permite la entrada al juego a personajes con menos de 500 puntos de skill." );
 				}
-				else if ( from.Client.Version == null || from.Client.Version < MinVersion )
+				else if ( from.NetState.Version == null || from.NetState.Version < MinVersion )
 				{
 					from.SendMessage( 32, "Para jugar es necesario tener al menos el cliente {0}", MinVersion.ToString() );
 				}
 				else if ( !m_Stone.IsOpened )
 				{
-					from.SendMessage( 32, "La entrada al juego está cerrada." );
+					from.SendMessage( 32, "La entrada al juego estï¿½ cerrada." );
 				}
 				else
 				{

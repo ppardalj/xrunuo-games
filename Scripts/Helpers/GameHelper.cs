@@ -33,12 +33,12 @@ namespace Server.Engines.Games
 
 		public static void AddToAddressList( Mobile m )
 		{
-			m_AddressesInEvent.Add( new AddressStruct( m.Client.Address, m.Client.ClientAddress ) );
+			m_AddressesInEvent.Add( new AddressStruct( m.NetState.Address, m.NetState.ClientAddress ) );
 		}
 
 		public static bool IsUsingMulticlient( Mobile m )
 		{
-			GameClient state = m.Client;
+			NetState state = m.NetState;
 
 			if ( state == null )
 				return false;

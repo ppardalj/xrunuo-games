@@ -58,7 +58,7 @@ namespace Server.Engines.Games
 		[CommandProperty( AccessLevel.Counselor )]
 		public int ActiveMemberCount
 		{
-			get { return m_Members.Count( m => m.Client != null ); }
+			get { return m_Members.Count( m => m.NetState != null ); }
 		}
 
 		public IEnumerable<Mobile> GetMembers()
@@ -83,7 +83,7 @@ namespace Server.Engines.Games
 
 		public virtual bool IsAlive()
 		{
-			return m_Members.Where( m => m.Alive && m.Client != null ).Any();
+			return m_Members.Where( m => m.Alive && m.NetState != null ).Any();
 		}
 	}
 }
