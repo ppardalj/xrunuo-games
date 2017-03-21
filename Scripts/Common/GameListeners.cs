@@ -123,14 +123,14 @@ namespace Server.Engines.Games
 
 		public override void OnStarted()
 		{
-			EventSink.Instance.Login += OnLogin;
-			EventSink.Instance.Disconnected += OnDisconnected;
+			EventSink.Login += OnLogin;
+			EventSink.Disconnected += OnDisconnected;
 		}
 
 		public override void OnFinished()
 		{
-			EventSink.Instance.Login -= OnLogin;
-			EventSink.Instance.Disconnected -= OnDisconnected;
+			EventSink.Login -= OnLogin;
+			EventSink.Disconnected -= OnDisconnected;
 		}
 
 		private void OnLogin( LoginEventArgs e )

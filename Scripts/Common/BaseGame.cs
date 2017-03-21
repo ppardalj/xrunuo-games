@@ -87,7 +87,7 @@ namespace Server.Engines.Games
 
 			AttachEventListeners();
 
-			EventSink.Instance.PlayerDeath += new PlayerDeathEventHandler( OnPlayerDeath );
+			EventSink.PlayerDeath += new PlayerDeathEventHandler( OnPlayerDeath );
 
 			m_Region = CreateRegion();
 			m_Region.Register();
@@ -138,7 +138,7 @@ namespace Server.Engines.Games
 
 		public void FinishGame()
 		{
-			EventSink.Instance.PlayerDeath -= OnPlayerDeath;
+			EventSink.PlayerDeath -= OnPlayerDeath;
 
 			if ( m_SliceTimer != null )
 			{

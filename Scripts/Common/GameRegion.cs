@@ -24,7 +24,7 @@ namespace Server.Engines.Games
 	{
 		public static void Initialize()
 		{
-			EventSink.Instance.SetAbility += new SetAbilityEventHandler( EventSink_SetAbility );
+			EventSink.SetAbility += new SetAbilityEventHandler( EventSink_SetAbility );
 		}
 
 		private static void EventSink_SetAbility( SetAbilityEventArgs e )
