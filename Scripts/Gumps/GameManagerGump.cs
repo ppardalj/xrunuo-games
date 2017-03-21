@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 
 using Server;
+using Server.Commands;
 using Server.Engines.Games;
 using Server.Network;
 using Server.Items;

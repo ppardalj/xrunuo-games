@@ -1,11 +1,8 @@
-using Server;
 using System;
-using Server.Targeting;
-using Server.Mobiles;
-using Server.Items;
-using Server.Engines.Games;
-using System.Collections.Generic;
 using System.Linq;
+using Server;
+using Server.Commands;
+using Server.Items;
 
 namespace Server.Scripts.Commands
 {
@@ -41,7 +38,7 @@ namespace Server.Scripts.Commands
 
 				if ( World.Instance.Items.OfType<JoinStone>().Any( stone => stone.IsOpened ) )
 					isAnyGameOpened = true;
-				
+
 				if ( !isAnyGameOpened )
 				{
 					m.SendMessage( 38, "There are no events active at the moment." );

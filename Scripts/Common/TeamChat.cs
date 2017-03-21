@@ -1,5 +1,7 @@
 ﻿using System;
 
+using Server.Commands;
+
 namespace Server.Engines.Games
 {
 	public static class TeamChat

@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 using Server;
+using Server.Commands;
 using Server.Items;
-using Server.Misc;
-using Server.Mobiles;
 using Server.Events;
 
 namespace Server.Engines.Games
@@ -54,7 +52,8 @@ namespace Server.Engines.Games
 		/// Event invoked when a mobile leaves the game.
 		/// </summary>
 		/// <param name="m"></param>
-		public virtual void OnLeave( Mobile m, LeaveMode leavemode )
+		/// <param name="leaveMode"></param>
+		public virtual void OnLeave( Mobile m, LeaveMode leaveMode )
 		{
 		}
 
@@ -84,7 +83,7 @@ namespace Server.Engines.Games
 		}
 
 		/// <summary>
-		/// Event invoked when <paramref name="from"/> death has been 
+		/// Event invoked when <paramref name="from"/> death has been
 		/// assisted by <paramref name="assistant"/>, meaning that
 		/// they did at least a 25% of the target max hits as damage.
 		/// </summary>
@@ -102,7 +101,7 @@ namespace Server.Engines.Games
 
 		/// <summary>
 		/// Event invoked when mob <paramref name="healer"/> resurrects
-		/// mob <paramref name="m"/> in <paramref name="amount"/>.
+		/// mob <paramref name="m"/>.
 		/// </summary>
 		public virtual void OnResurrect( Mobile m, Mobile healer )
 		{
@@ -113,7 +112,7 @@ namespace Server.Engines.Games
 	{
 		public static readonly TimeSpan LogoutLimitTime = TimeSpan.FromMinutes( 1.0 );
 
-		private Dictionary<Mobile, DateTime> m_Table;
+		private readonly Dictionary<Mobile, DateTime> m_Table;
 
 		public LogoutKicker( IGame game )
 			: base( game )
@@ -252,9 +251,9 @@ namespace Server.Engines.Games
 			Game.BroadcastMessage( "Debug: OnJoin(from={0})", from );
 		}
 
-		public override void OnLeave( Mobile from, LeaveMode leavemode )
+		public override void OnLeave( Mobile from, LeaveMode leaveMode )
 		{
-			Game.BroadcastMessage( "Debug: OnLeave(from={0}, leavemode={1})", from, leavemode );
+			Game.BroadcastMessage( "Debug: OnLeave(from={0}, leavemode={1})", from, leaveMode );
 		}
 
 		public override void OnWin( Mobile from )
@@ -486,11 +485,11 @@ namespace Server.Engines.Games
 				Game.BroadcastMessage( "{0} has scored a {1} kill!", killer.Name, cardinal );
 		}
 
-		public override void OnLeave( Mobile m, LeaveMode leavemode )
+		public override void OnLeave( Mobile m, LeaveMode leaveMode )
 		{
-			base.OnLeave( m, leavemode );
+			base.OnLeave( m, leaveMode );
 
-			if ( leavemode != LeaveMode.Illegal )
+			if ( leaveMode != LeaveMode.Illegal )
 			{
 				var collection = GetCollection( m );
 				if ( collection.MaxBurst >= MinBurstLengthForPrice )
@@ -573,7 +572,7 @@ namespace Server.Engines.Games
 			}
 		}
 
-		public override void OnLeave( Mobile from, LeaveMode leavemode )
+		public override void OnLeave( Mobile from, LeaveMode leaveMode )
 		{
 			var horse = GetHorseFor( from );
 
