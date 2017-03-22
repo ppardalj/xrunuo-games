@@ -25,7 +25,7 @@ namespace Server.Engines.Games
 
 		public override bool OnMoveOver( Mobile m )
 		{
-			return !m.IsPlayer || UsarGate( m );
+			return !m.Player || UsarGate( m );
 		}
 
 		public bool UsarGate( Mobile m )

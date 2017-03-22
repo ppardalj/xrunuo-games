@@ -176,7 +176,7 @@ namespace Server.Items
 			{
 				giveMageRegs = true;
 				giveMysticRegs = true;
-				GiveItem( m, new MysticismSpellbook() { Content = 65535 } );
+				GiveItem( m, new MysticSpellbook() { Content = 65535 } );
 			}
 
 			Bag bag = new Bag() { Label1 = "Reagents" };
